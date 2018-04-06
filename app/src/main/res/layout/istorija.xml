@@ -37,6 +37,16 @@
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/na_desno" />
+
     </LinearLayout>
 
+    <ListView
+        android:id="@+id/prihodi"
+        android:layout_width="match_parent"
+        android:layout_height="194dp" />
+
+    <ListView
+        android:id="@+id/rashodi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

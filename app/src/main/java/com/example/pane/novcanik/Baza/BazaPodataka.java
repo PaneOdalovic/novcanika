@@ -55,12 +55,12 @@ public class BazaPodataka extends SQLiteOpenHelper {
 
         String CREATE_PRIHOD_TABLE = "CREATE TABLE " + TABLE_PRIHOD + "("
                 + PRIHOD_ID_IZNOS + " INTEGER PRIMARY KEY,"+ PRIHOD_OPIS + " TEXT,"
-                + PRIHOD_VREDNOST + " LONG" + ")";
+                + PRIHOD_VREDNOST + PRIHOD_NALOG+" LONG,"+" LONG" + ")";
         sqLiteDatabase.execSQL(CREATE_PRIHOD_TABLE);
 
         String CREATE_RASHOD_TABLE = "CREATE TABLE " + TABLE_RASHOD + "("
                 + RASHOD_ID_IZNOS + " INTEGER PRIMARY KEY,"+ RASHOD_OPIS + " TEXT,"
-                + RASHOD_VREDNOST + " LONG" + ")";
+                + RASHOD_VREDNOST + RASHOD_NALOG+" LONG,"+" LONG" + ")";
         sqLiteDatabase.execSQL(CREATE_RASHOD_TABLE);
     }
 
@@ -110,6 +110,39 @@ public class BazaPodataka extends SQLiteOpenHelper {
         Prihod p=new Prihod(Integer.parseInt(cursor.getString(0)),cursor.getString(1),Long.parseLong(cursor.getString(2)),Integer.parseInt(cursor.getString(3)));
         return p;
     }
+    public List<Prihod> vratiPrihodeZaOdredjeniNalog(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Prihod> prihodi=new ArrayList<>();
+        Cursor cursor = db.query(TABLE_PRIHOD, new String[] { PRIHOD_ID_IZNOS,
+                        PRIHOD_OPIS, PRIHOD_VREDNOST, PRIHOD_NALOG}, PRIHOD_NALOG + "=?",
+                new String[] { String.valueOf(id) }, null, null, null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+            prihodi.add(new Prihod(Integer.parseInt(cursor.getString(0)),cursor.getString(1),Long.parseLong(cursor.getString(2)),Integer.parseInt(cursor.getString(3))));
+            while (cursor.moveToNext()) {
+                prihodi.add(new Prihod(Integer.parseInt(cursor.getString(0)),cursor.getString(1),Long.parseLong(cursor.getString(2)),Integer.parseInt(cursor.getString(3))));
+            }
+        }
+        return prihodi;
+    }
+    public List<Rashod> vratiRashodeZaOdredjeniNalog(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Rashod> rashodi=new ArrayList<>();
+        Cursor cursor = db.query(TABLE_PRIHOD, new String[] { PRIHOD_ID_IZNOS,
+                        PRIHOD_OPIS, PRIHOD_VREDNOST, PRIHOD_NALOG}, PRIHOD_NALOG + "=?",
+                new String[] { String.valueOf(id) }, null, null, null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+            rashodi.add(new Rashod(Integer.parseInt(cursor.getString(0)),cursor.getString(1),Long.parseLong(cursor.getString(2)),Integer.parseInt(cursor.getString(3))));
+            while (cursor.moveToNext()) {
+                rashodi.add(new Rashod(Integer.parseInt(cursor.getString(0)),cursor.getString(1),Long.parseLong(cursor.getString(2)),Integer.parseInt(cursor.getString(3))));
+            }
+        }
+        return rashodi;
+    }
+
 
     public Rashod vratiRashod(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
