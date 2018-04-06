@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_google_signin_btn_text_dark_default"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:gravity="center"
+        android:text="Odaberite Nalog:"
+        android:textSize="18sp" />
+
+    <RadioButton
+        android:id="@+id/nalozi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RadioButton" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:gravity="center"
+        android:text="Opis:"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/opisTransakcije"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:gravity="center"
+        android:text="Iznos Prenosa:"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/iznosPrenosa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/prihodTransakcije"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@android:color/background_light"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/plus" />
+
+        <ImageButton
+            android:id="@+id/rashodTransakcije"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@android:color/background_light"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/minus" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.pane.novcanik.MainActivity">
+
+    <TextView
+        android:id="@+id/ukupnoPara"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/dodavanjePrihoda"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@android:color/background_light"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/plus" />
+
+        <ImageButton
+            android:id="@+id/dodavanjeRashoda"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@android:color/background_light"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/minus" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/nalozi"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/nalozi" />
+
+    <ImageButton
+        android:id="@+id/istorija"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/istorija" />
+
+    <TextView
+        android:id="@+id/transakcije"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:gravity="center"
+        android:text="Transakcije"
+        android:textColor="@android:color/background_dark"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

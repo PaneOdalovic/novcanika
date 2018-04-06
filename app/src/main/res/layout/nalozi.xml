@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/nalog"
+            android:layout_width="316dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColorLink="@color/colorPrimaryDark" />
+
+        <ImageButton
+            android:id="@+id/pretraga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/lupa" />
+
+        <ImageButton
+            android:id="@+id/dodavanje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/dodaj" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="487dp" />
+
+</LinearLayout>
