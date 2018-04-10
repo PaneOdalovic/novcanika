@@ -64,6 +64,8 @@ public class BazaPodataka extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CREATE_RASHOD_TABLE);
     }
 
+    
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NALOG);
@@ -179,6 +181,7 @@ public class BazaPodataka extends SQLiteOpenHelper {
 
         return nalog;
     }
+
     public List<Nalog> vratiSveNalog() {
         List<Nalog> listaNaloga = new ArrayList<Nalog>();
         // Select All Query

@@ -8,14 +8,23 @@
     <TextView
         android:id="@+id/cena"
         android:layout_width="0dp"
-        android:layout_weight="0.4"
-        android:layout_height="25dp"
-        />
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:textAlignment="center" />
+
     <TextView
         android:id="@+id/opis"
         android:layout_width="0dp"
-        android:layout_weight="0.6"
-        android:layout_height="25dp"
-        />
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/mapa"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:text="mapa" />
+
 
 </LinearLayout>

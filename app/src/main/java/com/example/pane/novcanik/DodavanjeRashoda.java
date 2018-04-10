@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.pane.novcanik.Baza.Nalog;
 import com.example.pane.novcanik.Baza.Prihod;
+import com.example.pane.novcanik.Baza.Rashod;
 import com.google.android.gms.maps.MapView;
 
 /**
@@ -33,7 +35,13 @@ public class DodavanjeRashoda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Long l=Long.parseLong(rashod.getText().toString());
-
+                Rashod r=new Rashod(opis.getText().toString(),l,1);
+                MainActivity.bp.dodajRashod(r);
+                Nalog n=MainActivity.bp.vratiNalog(1);
+                Double d=n.get_dug()-l;
+                n.set_dug(d);
+                MainActivity.iznos.setText(n.get_dug()+"");
+                MainActivity.bp.izmeniNaloga(n);
             }
         });
     }

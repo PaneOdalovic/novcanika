@@ -5,48 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/textPrihod"
         android:layout_width="match_parent"
-        android:layout_height="82dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/pre"
-            android:layout_width="53dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.4"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/na_levo" />
-
-        <TextView
-            android:id="@+id/mesec"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Januar"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="30sp" />
-
-        <ImageButton
-            android:id="@+id/posle"
-            android:layout_width="53dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.4"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/na_desno" />
-
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:text="Prihodi:"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
     <ListView
         android:id="@+id/prihodi"
         android:layout_width="match_parent"
-        android:layout_height="194dp" />
+        android:layout_height="200dp" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textRashod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rashodi:"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
     <ListView
         android:id="@+id/rashodi"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp" />
 </LinearLayout>

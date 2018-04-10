@@ -24,6 +24,11 @@ public class Rashod {
         this.iznos = iznos;
         this.idNaloga=idNaloga;
     }
+    public Rashod( String opis, Long iznos, int idNaloga) {
+        this.opis = opis;
+        this.iznos = iznos;
+        this.idNaloga=idNaloga;
+    }
 
     public String getOpis() {
         return opis;

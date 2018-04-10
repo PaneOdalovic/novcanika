@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.pane.novcanik.Baza.Nalog;
 import com.example.pane.novcanik.Baza.Prihod;
 
 /**
@@ -32,8 +33,12 @@ public class DodavanjePrihoda extends AppCompatActivity {
                 Long l=Long.parseLong(prihod.getText().toString());
                 Prihod p=new Prihod(opis.getText().toString(),l,1);
                 MainActivity.bp.dodajPrihod(p);
-                Double suma=Double.parseDouble(MainActivity.iznos.getText().toString());
-                MainActivity.iznos.setText(prihod.getText().toString());
+                Nalog n=MainActivity.bp.vratiNalog(1);
+                Double d=n.get_dug()+l;
+                n.set_dug(d);
+                MainActivity.iznos.setText(n.get_dug()+"");
+                MainActivity.bp.izmeniNaloga(n);
+
             }
         });
     }

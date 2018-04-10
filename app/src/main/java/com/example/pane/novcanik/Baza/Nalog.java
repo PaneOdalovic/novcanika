@@ -14,7 +14,6 @@ public class Nalog {
     private List<Prihod> prihodi;
 
     public Nalog(){
-
     }
 
     public List<Rashod> getRashodi() {

@@ -24,16 +24,17 @@ public class Nalozi extends AppCompatActivity {
     List<Nalog> nalozi;
     ImageButton dodavanje;
     ListView list;
-    String[] web=new String[1000];
+    Nalog[] web;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nalozi);
         nalozi=MainActivity.bp.vratiSveNalog();
+        web=new Nalog[nalozi.size()];
         int i=0;
         for(Nalog n:nalozi){
             //bp.obrisiNalog(n);
-            web[i++]=n.get_ime()+":"+n.get_dug()+"din";
+            web[i++]=n;
         }
 
         dodavanje= (ImageButton)findViewById(R.id.dodavanje);

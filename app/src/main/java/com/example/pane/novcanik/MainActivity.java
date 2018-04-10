@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.pane.novcanik.Baza.BazaPodataka;
+import com.example.pane.novcanik.Baza.Nalog;
 
 public class MainActivity extends AppCompatActivity {
     public static BazaPodataka bp;
@@ -20,8 +21,10 @@ TextView transakcije;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iznos=findViewById(R.id.ukupnoPara);
         bp=new BazaPodataka(this);
+        iznos=findViewById(R.id.ukupnoPara);
+        Nalog n=bp.vratiNalog(1);
+        iznos.setText(n.get_dug()+"");
         dodavanjePrihoda=(ImageButton) findViewById(R.id.dodavanjePrihoda);
         dodavanjePrihoda.setOnClickListener(new View.OnClickListener() {
             @Override
